@@ -3,6 +3,9 @@ from flask import Flask
 from server.api_v1 import v1
 from server.api_v2 import v2
 
+from server.db import db
+
+db.setup("postgresql://kilian@localhost:5432/parkapi")
 app = Flask(__name__)
 
 app.register_blueprint(v1)
